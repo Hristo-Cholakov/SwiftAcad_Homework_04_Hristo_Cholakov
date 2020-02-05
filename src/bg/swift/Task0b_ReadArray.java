@@ -12,7 +12,8 @@ public class Task0b_ReadArray {
             arr[i] = Integer.parseInt(scanner.nextLine());
 
         }
-        String readArray = Arrays.toString(arr).replace("[", "").replace("]", "");
+        String readArray = Arrays.toString(arr).replace("[", "")
+                .replace("]", "");
         System.out.println(readArray);
     }
 }
