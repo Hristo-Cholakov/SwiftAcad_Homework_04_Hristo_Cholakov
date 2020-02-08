@@ -18,3 +18,4 @@ public class Task3a_IsPalindrome {
         System.out.println(isPalindrome);
     }
 }
+
