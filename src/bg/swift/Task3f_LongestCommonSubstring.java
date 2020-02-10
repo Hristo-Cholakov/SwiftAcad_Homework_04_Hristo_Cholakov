@@ -1,26 +1,24 @@
 package bg.swift;
 
-public class Task3f_LongestCommonSubstring {
-    static String findLCS(String str1, String str2) {
-        int longest = 0;
-        String longestSubstring = "";
+import java.util.Scanner;
 
-        for (int i=0; i < str1.length(); ++i) {
-            for (int j=i+1; j <= str1.length(); ++j) {
-                String substring = str1.substring(i, j);
-                if (str2.contains(substring) && substring.length() > longest) {
-                    longest = substring.length();
-                    longestSubstring = substring;
+public class Task3f_LongestCommonSubstring {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        String str1 = scanner.nextLine();
+        String str2 = scanner.nextLine();
+        String longestSubSeq = "";
+        int longest = 0;
+        for (int i = 0; i < str1.length(); i++) {
+            for (int j = i + 1; j <=str1.length(); j++) {
+                if (str2.contains(str1.substring(i, j)) && str1.substring(i, j).length()>longest) {
+                    longest =str1.substring(i, j).length();
+                    longestSubSeq = str1.substring(i, j);
                 }
             }
         }
-
-        return longestSubstring;
-    }
-
-    public static void main(String[] args) {
-        String str1 = "ahasjaaakxmza";
-        String str2 = "ahaooxmaaakxs";
-        System.out.println(findLCS(str1, str2));
+        System.out.println(longestSubSeq);
     }
 }
+
